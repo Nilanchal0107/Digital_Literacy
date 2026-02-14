@@ -1,0 +1,941 @@
+/* ========================================
+   DIGITAL LITERACY PRESENTATION - CSS
+   Color Palette: Midnight Executive
+   Primary: #1E2761 (Navy)
+   Secondary: #CADCFC (Ice Blue)
+   Accent: #FFFFFF (White)
+   ======================================== */
+
+/* ===== GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Calibri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    background-color: #1E2761;
+    color: #333;
+}
+
+/* ===== PRESENTATION CONTAINER ===== */
+.presentation-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+.slide-background {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    padding: 50px 70px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== SLIDE 1: TITLE SLIDE ===== */
+.title-slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #FFFFFF;
+}
+
+.main-title {
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #CADCFC;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 28px;
+    font-style: italic;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.group-members {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    border: 2px solid rgba(202, 220, 252, 0.3);
+}
+
+.group-members h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #CADCFC;
+    text-align: center;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.member {
+    background: rgba(202, 220, 252, 0.2);
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFFFFF;
+    border: 1px solid rgba(202, 220, 252, 0.3);
+}
+
+.title-image {
+    width: 80%;
+    max-width: 900px;
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.title-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== CONTENT SLIDES GENERAL ===== */
+.content-slide {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.slide-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1E2761;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.highlight-text {
+    font-size: 28px;
+    font-style: italic;
+    color: #1E2761;
+    text-align: center;
+    margin: 25px 0;
+    padding: 20px;
+    background: #CADCFC;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/* ===== SLIDE 2: TIMELINE ===== */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    flex: 1;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #F8F9FC;
+    border-radius: 10px;
+    border-left: 5px solid #1E2761;
+}
+
+.timeline-year {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1E2761;
+    min-width: 100px;
+}
+
+.timeline-desc {
+    font-size: 26px;
+    color: #333;
+}
+
+.content-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SLIDE 3: THREE PILLARS ===== */
+.three-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.pillar {
+    background: #F8F9FC;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #CADCFC;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(30, 39, 97, 0.2);
+}
+
+.pillar-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    background: #CADCFC;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pillar-icon img {
+    width: 45px;
+    height: 45px;
+}
+
+.pillar h3 {
+    font-size: 30px;
+    color: #1E2761;
+    margin-bottom: 10px;
+}
+
+.pillar p {
+    font-size: 24px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.center-image {
+    width: 100%;
+    text-align: center;
+}
+
+.center-image img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SLIDE 4: 2x2 GRID ===== */
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.grid-item {
+    background: #F8F9FC;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #CADCFC;
+}
+
+.grid-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background: #CADCFC;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.grid-item h3 {
+    font-size: 30px;
+    color: #1E2761;
+    margin-bottom: 8px;
+}
+
+.grid-item p {
+    font-size: 24px;
+    color: #555;
+}
+
+.bottom-image {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.bottom-image img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SLIDE 5: DAILY JOURNEY ===== */
+.daily-journey {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.journey-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 18px;
+    background: #F8F9FC;
+    border-radius: 15px;
+    border-left: 5px solid #1E2761;
+}
+
+.journey-time {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1E2761;
+    min-width: 120px;
+}
+
+.journey-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.journey-icon {
+    width: 45px;
+    height: 45px;
+}
+
+.journey-content p {
+    font-size: 26px;
+    color: #333;
+}
+
+.side-image {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.side-image img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SLIDE 6: EDUCATION GRID ===== */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.edu-item {
+    background: #F8F9FC;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #CADCFC;
+}
+
+.edu-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+}
+
+.edu-item h3 {
+    font-size: 28px;
+    color: #1E2761;
+    margin-bottom: 8px;
+}
+
+.edu-item p {
+    font-size: 24px;
+    color: #555;
+}
+
+.feature-image {
+    width: 100%;
+}
+
+.feature-image img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SLIDE 7: SKILLS GRID ===== */
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px;
+    background: #F8F9FC;
+    border-radius: 15px;
+    border: 2px solid #CADCFC;
+}
+
+.skill-number {
+    width: 55px;
+    height: 55px;
+    background: #1E2761;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.skill-content h3 {
+    font-size: 30px;
+    color: #1E2761;
+    margin-bottom: 5px;
+}
+
+.skill-content p {
+    font-size: 24px;
+    color: #555;
+}
+
+.toolkit-image {
+    width: 100%;
+}
+
+.toolkit-image img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SLIDE 8: SAFETY GRID ===== */
+.safety-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.safety-item {
+    background: #F8F9FC;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #CADCFC;
+}
+
+.safety-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+}
+
+.safety-item h3 {
+    font-size: 30px;
+    color: #1E2761;
+    margin-bottom: 8px;
+}
+
+.safety-item p {
+    font-size: 24px;
+    color: #555;
+}
+
+.shield-image {
+    width: 100%;
+}
+
+.shield-image img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SLIDE 9: DIGITAL DIVIDE ===== */
+.divide-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.divide-left h3 {
+    font-size: 36px;
+    color: #1E2761;
+    margin-bottom: 20px;
+}
+
+.divide-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.divide-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #F8F9FC;
+    border-radius: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.list-icon {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+}
+
+.stat-box {
+    background: #1E2761;
+    color: #FFFFFF;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 52px;
+    font-weight: bold;
+    color: #CADCFC;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.divide-right img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SLIDE 10: INITIATIVES GRID ===== */
+.initiatives-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.initiative-item {
+    background: #F8F9FC;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #CADCFC;
+}
+
+.init-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+}
+
+.initiative-item h3 {
+    font-size: 30px;
+    color: #1E2761;
+    margin-bottom: 8px;
+}
+
+.initiative-item p {
+    font-size: 24px;
+    color: #555;
+}
+
+.bottom-image {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.bottom-image img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SLIDE 11: STEPS CONTAINER ===== */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 18px;
+    background: #F8F9FC;
+    border-radius: 15px;
+    border: 2px solid #CADCFC;
+}
+
+.step-circle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #1E2761, #2a3a7a);
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    font-size: 30px;
+    color: #1E2761;
+    margin-bottom: 5px;
+}
+
+.step-content p {
+    font-size: 24px;
+    color: #555;
+}
+
+.journey-image {
+    width: 100%;
+}
+
+.journey-image img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SLIDE 12: TOPICS LIST ===== */
+.topics-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.topics-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.topics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.topic-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 25px;
+    background: #F8F9FC;
+    border-radius: 10px;
+    border-left: 5px solid #1E2761;
+    transition: transform 0.3s ease;
+}
+
+.topic-item:hover {
+    transform: translateX(10px);
+    background: #CADCFC;
+}
+
+.topic-number {
+    width: 50px;
+    height: 50px;
+    background: #1E2761;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.topic-text {
+    font-size: 26px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ===== CHART CONTAINERS ===== */
+.chart-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.chart-container svg {
+    width: 100%;
+    height: auto;
+}
+
+/* ===== SLIDE 13: THANK YOU ===== */
+.thank-you-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.thank-title {
+    font-size: 80px;
+    font-weight: bold;
+    color: #CADCFC;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.quote-container {
+    max-width: 900px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.quote-mark {
+    font-size: 120px;
+    color: rgba(202, 220, 252, 0.3);
+    position: absolute;
+    top: -40px;
+    left: -30px;
+    font-family: Georgia, serif;
+}
+
+.quote-text {
+    font-size: 28px;
+    font-style: italic;
+    line-height: 1.6;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    padding: 0 40px;
+}
+
+.quote-author {
+    font-size: 22px;
+    color: #CADCFC;
+    font-weight: 500;
+}
+
+.thank-subtitle {
+    font-size: 24px;
+    color: #CADCFC;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.thank-image {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.thank-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== SLIDE COUNTER ===== */
+.slide-counter {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(30, 39, 97, 0.9);
+    color: #FFFFFF;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* ===== NAVIGATION ARROWS ===== */
+.nav-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(30, 39, 97, 0.8);
+    color: #FFFFFF;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.nav-arrow:hover {
+    background: rgba(30, 39, 97, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-left {
+    left: 30px;
+}
+
+.nav-right {
+    right: 30px;
+}
+
+.nav-arrow.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.nav-arrow.disabled:hover {
+    transform: translateY(-50%);
+    background: rgba(30, 39, 97, 0.8);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .slide-background {
+        padding: 40px 50px;
+    }
+    
+    .slide-title {
+        font-size: 36px;
+    }
+    
+    .main-title {
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide-background {
+        padding: 30px 30px;
+    }
+    
+    .slide-title {
+        font-size: 28px;
+    }
+    
+    .two-column,
+    .divide-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .three-pillars,
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-2x2,
+    .safety-grid,
+    .initiatives-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-title {
+        font-size: 42px;
+    }
+    
+    .thank-title {
+        font-size: 56px;
+    }
+}
