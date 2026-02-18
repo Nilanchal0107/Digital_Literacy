@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initDarkMode();
     updateSlideCounter();
     updateNavigationArrows();
+    updateProgressBar();
     initializeRevealItems();
 });
 
@@ -98,6 +99,7 @@ function showSlide(slideNumber) {
     
     updateSlideCounter();
     updateNavigationArrows();
+    updateProgressBar();
 }
 
 // Function to go to next slide (direct jump, no reveals)
@@ -127,6 +129,15 @@ function updateSlideCounter() {
     }
 }
 
+// Update progress bar
+function updateProgressBar() {
+    const progressFill = document.getElementById('progress-fill');
+    if (progressFill) {
+        const progress = (currentSlide / totalSlides) * 100;
+        progressFill.style.width = progress + '%';
+    }
+}
+
 // Update navigation arrows (disable at boundaries)
 function updateNavigationArrows() {
     const leftArrow = document.getElementById('nav-left');
@@ -149,16 +160,16 @@ function updateNavigationArrows() {
     }
 }
 
-// Keyboard navigation - Arrow keys jump slides directly
+// Unified keyboard navigation
 document.addEventListener('keydown', function (event) {
     switch (event.key) {
         case 'ArrowRight':
         case 'Right':
-            nextSlide(); // Direct jump
+            nextSlide();
             break;
         case 'ArrowLeft':
         case 'Left':
-            previousSlide(); // Direct jump
+            previousSlide();
             break;
         case 'Home':
             showSlide(1);
@@ -169,6 +180,15 @@ document.addEventListener('keydown', function (event) {
         case ' ': // Spacebar
             event.preventDefault();
             revealNextOrAdvanceSlide();
+            break;
+        default:
+            // Number key navigation (1-9 jump to specific slide)
+            if (event.key >= '1' && event.key <= '9') {
+                const targetSlide = parseInt(event.key);
+                if (targetSlide <= totalSlides) {
+                    showSlide(targetSlide);
+                }
+            }
             break;
     }
 });
@@ -234,16 +254,6 @@ function handleSwipe() {
         previousSlide();
     }
 }
-
-// Number key navigation (jump to specific slide)
-document.addEventListener('keydown', function (event) {
-    if (event.key >= '1' && event.key <= '9') {
-        const targetSlide = parseInt(event.key);
-        if (targetSlide <= totalSlides) {
-            showSlide(targetSlide);
-        }
-    }
-});
 
 // Prevent accidental text selection while clicking
 document.addEventListener('selectstart', function (event) {
